@@ -57,11 +57,10 @@ vault server -dev
 
 
 ---> We need to export address and token 
-
+```
 export VAULT_ADDR='http://127.0.0.1:8200'
-
 export VAULT_TOKEN="hvs.fPagmu29uyGNgnkBOD7lLJI2"
-
+```
 
 ---> Check the status of the Vault Server
 
