@@ -45,9 +45,8 @@ vault --version
 ```
 
 
------------------------------------------------------------------
-
-To start and stop the vault server can be done in dev mode and server mode(to run on a production)
+---
+### To start and stop the vault server can be done in dev mode and server mode(to run on a production)
 
 ---> To start the Vault server in Development Mode:
 
