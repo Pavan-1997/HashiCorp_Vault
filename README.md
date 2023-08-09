@@ -10,18 +10,21 @@ Step1: Launch any server considering AWS EC2 Ubuntu here
 
 
 Step2: Add PGP for the package signing key
-
+```
 sudo apt update && sudo apt install gpg
+```
 
 
 Step3: Download the signing key to a new keyring
-
+```
 wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+```
 
 
 Step4: Verify the key's fingerprint
-
+```
 gpg --no-default-keyring --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg --fingerprint
+```
 
 
 Step5: Add Hashicorp Repo
