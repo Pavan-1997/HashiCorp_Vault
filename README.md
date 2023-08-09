@@ -353,18 +353,19 @@ ui = true
 vault server -config=config.hcl
 ```
 ---> Export VAULT_ADDR
-
+```
 export VAULT_ADDR='http://127.0.0.1:8200'
-
+```
 ---> Initialize vault
-
+```
 vault operator init
+```
 
+`Sealed state means no R/W`
 
-Sealed state means no R/W
-
-Unsealed state means R/W operations
+`Unsealed state means R/W operations`
 
 ---> Unseal vault
-
+```
 vault operator unseal
+```
