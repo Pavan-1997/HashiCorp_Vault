@@ -258,74 +258,71 @@ vault write auth/approle/role/my-role \
 export ROLE_ID="$(vault read -field=role_id auth/approle/role/my-role/role-id)"
 ```
 ---> Generate and Export Secret ID
-
+```
 export SECRET_ID="$(vault write -f -field=secret_id auth/approle/role/my-role/secret-id)"
-
+```
 ---> Now perform a write config 
-
+```
 vault write auth/approle/login role_id="$ROLE_ID" secret-id="$SECRET_ID"
+```
 
 
-
------------------------------------------------------------------
-
+---
 --->Vault login using root token
-
+```
 vault login 
+```
 (Provide the root token generated from the start of vault server in dev-mode)
 
 ---> To re-create a root token
-
+```
 vault token create 
-
+```
 ---> To remove already generated root tokens
-
+```
 vault token revoke <token>
+```
 
 
-
------------------------------------------------------------------
-
+---
 ---> To enable GitHub authentication
-
+```
 vault auth enable github
-
+```
 
 * If get errror Error enabling github auth: Post "https://127.0.0.1:8200/v1/sys/auth/github": http: server gave HTTP response to HTTPS client then perform below
-
+```
 export VAULT_ADDR='http://127.0.0.1:8200'
-
 export VAULT_TOKEN="hvs.fPagmu29uyGNgnkBOD7lLJI2"
-
+```
 ---> To verify the auth list
-
+```
 vault auth list
-
+```
 ---> To create Orgazisation in vault
-
+```
 vault write auth/github/config organization=Sample-Test-Pavan
-
+```
 ---> To create Team 
-
+```
 vault write auth/github/map/teams/Sample-Test-Pavan-Team value=default,application
-
+```
 ---> Vault login using Github Method and give a token generated from GitHub
-
+```
 vault login -method=github
-
+```
 ---> Revoke Github Authentication
-
+```
 vault token revoke -mode path auth/github
-
+```
 ---> Disable Github Authentication
-
+```
 vault auth disable github
+```
 
 
-
------------------------------------------------------------------
-
-Start the Vault in Production make sure you disable the dev mode prior
+---
+### Start the Vault in Production make sure you disable the dev mode prior
 
 ---> To stop the dev mode vault
 
