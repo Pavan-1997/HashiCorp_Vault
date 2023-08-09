@@ -49,9 +49,9 @@ vault --version
 ### To start and stop the vault server can be done in dev mode and server mode(to run on a production)
 
 ---> To start the Vault server in Development Mode:
-
+```
 vault server -dev
-
+```
 - Need to check componenets -  Port, Storage, Unseal Key and Root Token
 - Storage is inmem when using Vault in dev mode where all creds are stored locally
 
