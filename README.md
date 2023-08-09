@@ -77,28 +77,31 @@ vault kv put <custom-path> key-1=value-1
 ```
 
 For enabling a custom path in the secret engine we use below
-
+```
 vault secrets enable -path=<custom-path> kv
-
-Eg: vault secrets enable -path=my kv
+```
+`Eg: vault secrets enable -path=my kv`
 	
-	vault kv put my/path my-key-1=value-1
+`vault kv put my/path my-key-1=value-1`
 
 ---> READ:
-
+```
 vault kv get my/path
-
+```
+```
 vault kv get -format=json  my/path
+```
 (To view the secret in JSON)
 
-
+```
 vault secrets list
+```
 (To get all secrets available at the particular path)
 
 ---> DELETE:
-
+```
 vault kv delete my/path
-
+```
 
 -----------------------------------------------------------------
 
