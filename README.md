@@ -28,8 +28,9 @@ gpg --no-default-keyring --keyring /usr/share/keyrings/hashicorp-archive-keyring
 
 
 Step5: Add Hashicorp Repo
-
+```
 echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) test" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+```
 
 
 Step6: Update and Install Vault
