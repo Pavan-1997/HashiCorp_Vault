@@ -72,9 +72,9 @@ vault status
 ### To read, write and delete secrets:
 
 ---> WRITE:
-
+```
 vault kv put <custom-path> key-1=value-1
-
+```
 
 For enabling a custom path in the secret engine we use below
 
