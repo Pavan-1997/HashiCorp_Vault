@@ -233,18 +233,18 @@ vault kv put -mount=secret foo robot=beep
 
 -----------------------------------------------------------------
 
-AUTH METHODS AND POLICIES
+### AUTH METHODS AND POLICIES
 
 ---> To check the auth list 
-
+```
 vault auth list
-
+```
 ---> To enable a auth method
-
+```
 vault auth enable appprole
-
+```
 ---> Associate policy to auth method
-
+```
 vault write auth/approle/role/my-role \
    secret_id_ttl=10m \
    token_num_uses=10 \
@@ -252,11 +252,11 @@ vault write auth/approle/role/my-role \
    token_max_ttl=30m \
    secret_id_num_uses=40 \
    token_policies=my-policy
-
+```
 ---> Generate and Export Role ID
-
+```
 export ROLE_ID="$(vault read -field=role_id auth/approle/role/my-role/role-id)"
-
+```
 ---> Generate and Export Secret ID
 
 export SECRET_ID="$(vault write -f -field=secret_id auth/approle/role/my-role/secret-id)"
