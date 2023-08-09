@@ -38,10 +38,11 @@ Step6: Update and Install Vault
 sudo apt update && sudo apt install vault
 ```
 
+
 Step7: To check the Vault Version
-
+```
 vault --version
-
+```
 
 
 -----------------------------------------------------------------
