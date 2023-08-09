@@ -326,14 +326,14 @@ vault auth disable github
 
 ---> To stop the dev mode vault
 
-Ctrl+C
+`Ctrl+C`
 
 ---> Unset development token
-
+```
 unset VAULT_TOKEN
-
----> Vault's config.hcl (Before doing below make a directory mkdir -p ./vault/data and later create a touch config.hcl)
-
+```
+---> Vault's config.hcl (Before doing below make a directory `mkdir -p ./vault/data` and later create a touch config.hcl)
+```
 storage "raft" {
   path    = "./vault/data"
   node_id = "node1"
@@ -347,11 +347,11 @@ listener "tcp" {
 api_addr = "http://127.0.0.1:8200"
 cluster_addr = "https://127.0.0.1:8201"
 ui = true
-
+```
 ---> Starting vault server using config.hcl 
-
+```
 vault server -config=config.hcl
-
+```
 ---> Export VAULT_ADDR
 
 export VAULT_ADDR='http://127.0.0.1:8200'
