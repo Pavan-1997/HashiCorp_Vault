@@ -106,24 +106,29 @@ vault kv delete my/path
 -----------------------------------------------------------------
 
 ---> To verify all Secret Engine path availbe on Hashicorp Server
-
+```
 vault secrets list
-
+```
 ---> To enable AWS Secret Engine path
-
+```
 vault secrets enable -path=aws aws
-
+```
+```
 vault secrets list
+```
 (To verify)
 
 ---> To disable AWS Secret Engine path
-
+```
 vault secrets disable aws
-
+```
+```
 vault secrets list
+```
 (To verify)
-
+```
 vault secrets disable <custom-path>
+```
 (To disable custom created secret engine path)
 
 
