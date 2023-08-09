@@ -183,16 +183,15 @@ vault lease revoke aws/creds/my-ec2-role1/<lease-id>
 ```
 
 
------------------------------------------------------------------
-
-VAULT POLICY
+---
+### VAULT POLICY
 
 ---> List the policies
-
+```
 vault policy list
-
+```
 ---> Write your custom policy
-
+```
 vault policy write my-policy - <<EOF
 # Dev servers have version 2 of KV secrets engine mounted by default, so will
 # need these paths to grant permissions:
@@ -204,8 +203,10 @@ path "secret/data/foo" {
   capabilities = ["read"]
 }
 EOF
-
+```
+```
 vault policy list
+```
 (To verify)
 
 ---> TO read any policy created
