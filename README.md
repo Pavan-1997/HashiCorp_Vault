@@ -210,25 +210,25 @@ vault policy list
 (To verify)
 
 ---> TO read any policy created
-
+```
 vault policy read my-policy
-
+```
 ---> Delete Vault policy by policy name 
-
+```
 vault policy delete my-policy
-
+```
 --->  Attach token to policy 
-
+```
 export VAULT_TOKEN="$(vault token create -field token -policy=my-policy)"
-
+```
 ---> Write a secret with the policy
-
+```
 vault kv put -mount=secret creds password="my-long-password"
-
+```
 ---> Verify write operation on foo which should ideally restrict
-
+```
 vault kv put -mount=secret foo robot=beep
-
+```
 
 
 -----------------------------------------------------------------
