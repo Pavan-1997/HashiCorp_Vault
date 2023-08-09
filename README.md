@@ -103,7 +103,7 @@ vault secrets list
 vault kv delete my/path
 ```
 
------------------------------------------------------------------
+---
 
 ---> To verify all Secret Engine path availbe on Hashicorp Server
 ```
@@ -133,23 +133,25 @@ vault secrets disable <custom-path>
 
 
 
------------------------------------------------------------------
+---
 
-AWS Dynamic Secrets Generation 
+### AWS Dynamic Secrets Generation 
 
 ---> To enable AWS Secret Engine path
-
+```
 vault secrets enable -path=aws aws
-
+```
+```
 vault secrets list
+```
 (To verify)
 
 ---> Set the root config using access-key and secret-key
-
+```
 vault write aws/config/root access-key=AKIAVS7NOQMV3LMDKZXB secret-key=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 region=us-east-2
-
+```
 ---> Need to setup role
-
+```
 vault write aws/roles/my-ec2-role2 \
         credential_type=iam_user \
         policy_document=-<<EOF
@@ -169,16 +171,16 @@ vault write aws/roles/my-ec2-role2 \
   ]
 }
 EOF
-
+```
 
 ---> Generate access key and secret key for that role
-
+```
 vault read aws/creds/my-ec2-role1
-
+```
 ---> To destroy the dynamic generated creds
-
+```
 vault lease revoke aws/creds/my-ec2-role1/<lease-id>
-
+```
 
 
 -----------------------------------------------------------------
