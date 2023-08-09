@@ -34,9 +34,9 @@ echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://
 
 
 Step6: Update and Install Vault
-
+```
 sudo apt update && sudo apt install vault
-
+```
 
 Step7: To check the Vault Version
 
