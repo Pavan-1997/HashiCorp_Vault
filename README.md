@@ -63,9 +63,9 @@ export VAULT_TOKEN="hvs.fPagmu29uyGNgnkBOD7lLJI2"
 ```
 
 ---> Check the status of the Vault Server
-
+```
 vault status
-
+```
 
 
 -----------------------------------------------------------------
