@@ -68,9 +68,8 @@ vault status
 ```
 
 
------------------------------------------------------------------
-
-To read, write and delete secrets:
+---
+### To read, write and delete secrets:
 
 ---> WRITE:
 
